@@ -42,7 +42,7 @@ def main():
   project_name = data['package']['name']
   project_dir = os.path.join(_ROOT_DIR, 'vulns', project_name)
   os.makedirs(project_dir, exist_ok=True)
-  vuln_path = os.path.join(project_dir, issue_id + '.yaml')
+  vuln_path = os.path.join(project_dir, f'{issue_id}.yaml')
 
   with open(vuln_path, 'w') as handle:
     yaml.dump(data, handle, sort_keys=False, Dumper=_YamlDumper)
